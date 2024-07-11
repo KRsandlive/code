@@ -7,18 +7,26 @@
    function new_code(x){alert(x)}
     </script>
     <link href="style.css" rel="stylesheet" type="text/css" />
- </head>
+    <script>now = new Date();
+
+</script>
+  </head>
   <body>
-  <h1 class="name">Web site</h1>
-   <a href = "https://www.naver.com"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20160504_295%2Fzzlidde_1462360339348GT0M2_PNG%2F2016-05-04_20.11.40.png&type=a340" width="100" height="100">
-    </a><br>
-    <button class="button" type = "button" onclick="location.href='index.html'">Home</button> 
-    <button class="button" type = "button" onclick="location.href='old_site/old.html'">Old site</button>
+  <h1 class="name">새로운 사이트</h1>
+    <section class = "light"><button class="button" type = "button" onclick="location.href='index.html'">Home</button>
+    <button class="button" type = "button" onclick="location.href='old_site/old.html'">Old site</button></section>
     <br>
-    <script type="text/javascript"> 
-    var a = new Date();
-    document.writeln(a)
-    document.writeln("<br>©sandlive")
-  </script>
+    <script class = "time" type="text/javascript">
+    const clock = document.getElementById("clock");
+   function getClock(){
+   const date = new Date()
+   const hour = String(date.getHours()).padStart(2,"0");
+   const minutes = String(date.getMinutes()).padStart(2,"0");
+   const second = String(date.getSeconds()).padStart(2,"0");
+   clock.innertext = `${hour}:${minutes}:${second}`; }
+     getClock();
+     setInterval(getClock, 1000);
+      document.writeln("<br>©sandlive")
+    </script>
  </body>
 </html>
