@@ -7,26 +7,16 @@
    function new_code(x){alert(x)}
     </script>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script>now = new Date();
-
-</script>
+    <script>now = new Date();</script>
   </head>
   <body>
   <h1 class="name">새로운 사이트</h1>
     <section class = "light"><button class="button" type = "button" onclick="location.href='index.html'">Home</button>
     <button class="button" type = "button" onclick="location.href='old_site/old.html'">Old site</button></section>
     <br>
-    <script class = "time" type="text/javascript">
-    const clock = document.getElementById("clock");
-   function getClock(){
-   const date = new Date()
-   const hour = String(date.getHours()).padStart(2,"0");
-   const minutes = String(date.getMinutes()).padStart(2,"0");
-   const second = String(date.getSeconds()).padStart(2,"0");
-   clock.innertext = `${hour}:${minutes}:${second}`; }
-     getClock();
-     setInterval(getClock, 1000);
-      document.writeln("<br>©sandlive")
-    </script>
+<script type="text/javascript" src="funtions_code.js">
+  function neww() {document.write(clockL)}
+  setInterval(neww, 1000);
+</script>
  </body>
 </html>
