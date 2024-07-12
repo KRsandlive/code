@@ -1,1 +1,1 @@
-{"type":"module","dependencies":{"express":"^4.19.2"}}
+{"type":"module","dependencies":{"cors":"^2.8.5","express":"^4.19.2"},"name":"code","version":"1.0.1","main":"main.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"git+https://github.com/KRsandlive/code.git"},"keywords":["My"],"author":"sandlive","license":"UNLICENSED","bugs":{"url":"https://github.com/KRsandlive/code/issues"},"homepage":"https://github.com/KRsandlive/code#readme","description":""}

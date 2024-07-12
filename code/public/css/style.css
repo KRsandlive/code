@@ -40,6 +40,9 @@ button {
   
   
   body {
+    position:absolute;
+    left: 10%;
+    top: 25%;
     margin:0;
     height:100vh;
     grid-auto-flow:column;
