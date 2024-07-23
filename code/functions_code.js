@@ -12,6 +12,7 @@ function setClock(){
   document.getElementById('clocker').textContent = cloker_free;
   time_on_text = (`켜진지 ${time_on}초 지남`); time_on = Number(time_on + 1);
   document.getElementById('time_on').textContent = time_on_text;
+
 }
 setInterval(setClock, 1000);
 setClock();

@@ -3,10 +3,6 @@
   <meta charset="utf-8">   
   <title>샌드라이브 사이트</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-    <script>
-   function new_code(x){alert(x)}
-    </script>
     <link rel="stylesheet" href="/css/style.css"/>
     <script>now = new Date();</script>
   </head>
@@ -23,32 +19,43 @@
 <p id="clocker">functions_code.js 파일의 무결성을 체크하세요.</p>
 <a id="time_on">functions_code.js 파일의 무결성을 체크하세요.</a>
 <br>
-<p id = 'check_pass'></p>
+<p id = 'check_pass_id'></p>
+<p id = 'check_pass_all'></p>
 <a><br>©sandlive</a>
 <script> 
+
 function pass_all() {
-  const data_id = document.getElementById('user_id').value
-  fetch(`http://localhost:3000/id/${data_id}`)
+
+  const data_id = document.getElementById('user_id').value;
+
+  fetch(`http://39.113.221.59:3000/id/${data_id}`)
   .then((response) => response.text())
   .then((data_id) => {
     console.log(data_id)
-
-
-  
-  })
-  const data_password = document.getElementById('user_password').value
-  fetch(`http://localhost:3000/password/${data_password}`)
+    if(data_id == 'id access') {
+      document.getElementById('check_pass_id').textContent = '아이디가 확인되었습니다.';
+    }
+    else {
+      document.getElementById('check_pass_id').textContent = '아이디를 확인하세요.'; 
+    }
+    
+    
+})
+  const data_password = document.getElementById('user_password').value;
+  fetch(`http://39.113.221.59:3000/password/${data_password}`)
   .then((response) => response.text())
   .then((data_password) => {
-    console.log(data_password)
-    if (data_password == 'access success') {
-       document.getElementById('check_pass').textContent = '접근되었습니다'
+    console.log(data_password) 
+    if(data_password == 'password access') {
+      document.getElementById('check_pass_all').textContent  = '비밀번호가 확인되었습니다.'; 
+      }
+    else {
+      document.getElementById('check_pass_all').textContent  = '비밀번호를 확인하세요'; 
     }
-    if (data_password == 'access denied') {
-       document.getElementById('check_pass').textContent = '아이디 또는 비밀번호가 잘못 되었습니다. 다시 입력하세요.'}
-  })
-  }
+
+})}
   
+
 
 </script>
 <section class = "light"><script class = "button" type="text/javascript" src="/functions_code.js"></script></section>

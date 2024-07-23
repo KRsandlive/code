@@ -20,86 +20,71 @@ var count = 0;
 var count_val = 0;
 var message_1 = "0";
 
-function id_selecter(accounts_id_s) {
-  count = 1;
-  while(count < 100) {
-  if(accountData[`id${count}`] == accounts_id_s) {
-    console.log('success');
-    far_away2(count);
-   
-    console.log(accounts_id_s)
-    count_val = count;
-    count = 101;
-    k = 1;}
-  else{
-    console.log(count)
-    count = count + 1;
-  }
-  
-}}
-function far_away(account_password_s) {
-  accounts_password_t = account_password_s
-}
-
-function far_away2(v_acount) {
-  var_acount = v_acount;
-}
-
-
 
 const accountFile = fs.readFileSync('accounts/accounts.json', 'utf8'); 
 const accountData = JSON.parse(accountFile); 
 
 app.get('/', (request, response) => {
   readFile('index.html', 'utf-8', (err, data) => {
-    if(err) { response.send('No Such File of Directory') }
+    if(err) { response.send('파일 또는 디렉터리가 잘못됨') }
     response.send(data)
   })
 })
 
 app.get('/old_site', (request, response) => {
   readFile('old_site/index.html', 'utf-8', (err, data) => {
-    if(err) { response.send('No Such File of Directory') }
+    if(err) { response.send('파일 또는 디렉터리가 잘못됨') }
     response.send(data)
   })
 })
 
 app.get('/functions_code.js', (request, response) => {
   readFile('functions_code.js', 'utf-8', (err, data) => {
-    if(err) { response.send('No Such File of Directory') }
+    if(err) { response.send('파일 또는 디렉터리가 잘못됨') }
     response.send(data)
   
     })
   })
 
-if(k = 1) {
+
 app.get('/id/:id', (request, response) => {
-  const accounts = request.params;
-  console.log(accounts['id']);
-  const accounts_id = accounts['id']
-  response.send(accounts['id']);
-  var accounts_id_v = accounts['id']
-  id_selecter(accounts_id_v) 
-})
-
-
-
-app.get('/password/:password', (request, response) => {
-  const accounts2 = request.params;
-  console.log(accounts2['password']);
-  const accounts_password = accounts2['password']
-  var accounts_password_f = accounts2['password']
-  far_away(accounts_password_f)
-  if(accountData[`password${(count_val)}`] ==  accounts_password_f) {
-    message_1 = 'access success'
+var id_n = request.params;
+let t = 1;
+let response_id;
+while (t != 0) {
+  if(id_n['id'] == accountData[`id${t}`]) {
+    response_id = 'id access'
+    t = 0
   }
-  else {
-    message_1 = 'access denied'}
-  response.send(message_1);
-  console.log(message_1); 
-  })}
+  else if(t = 10) {
+    response_id = 'id denied'
+  }
+  else; {
+    console.log(t)
+    t = t + 1
+  }
+  response.send(response_id);
+}})
+  
+app.get('/password/:password', (request, response) => {
+  var password_n = request.params;
+  let t = 1;
+  let response_password;
+  while (t != 0) {
+    if(password_n['password'] == accountData[`password${t}`]) {
+      response_password = 'password access'
+      t = 0
+    }
+    else if(t = 10) {
+      response_password = 'password denied'
+    }
+    else; {
+      console.log(t)
+      t = t + 1
+    }
+    response.send(response_password);
+  }})
 
-    
 console.log(accountData)  
 
 app.listen(3000);
