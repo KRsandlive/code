@@ -28,7 +28,7 @@ function pass_all() {
 
   const data_id = document.getElementById('user_id').value;
 
-  fetch(`http://39.113.221.59:3000/id/${data_id}`)
+  fetch(`http://ip 주소:3000/id/${data_id}`)
   .then((response) => response.text())
   .then((data_id) => {
     console.log(data_id)
@@ -42,7 +42,7 @@ function pass_all() {
     
 })
   const data_password = document.getElementById('user_password').value;
-  fetch(`http://39.113.221.59:3000/password/${data_password}`)
+  fetch(`http://ip 주소:3000/password/${data_password}`)
   .then((response) => response.text())
   .then((data_password) => {
     console.log(data_password) 
