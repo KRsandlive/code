@@ -40,7 +40,7 @@ app.get('/functions_code.js', (request, response) => {
     });
 });
 
-// ID 체크 로직 (수정본)
+// ID 체크 로직
 app.get('/id/:id', (request, response) => {
     const { id } = request.params;
     let response_id = 'id denied';
@@ -54,7 +54,7 @@ app.get('/id/:id', (request, response) => {
     response.send(response_id);
 });
 
-// Password 체크 로직 (수정본)
+// Password 체크 로직
 app.get('/password/:password', (request, response) => {
     const { password } = request.params;
     let response_password = 'password denied';
